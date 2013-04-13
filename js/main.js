@@ -2,11 +2,11 @@ var searchValues = {};
 var queryTask, query;
 
 // Setup after dom loaded
-$(function() {
+/*$(function() {
 	dojo.require("esri.tasks.query");
 	dojo.require("esri.map");
 	dojo.ready(init);
-});
+});*/
 
 function selectedSex() {
 	if ( jQuery("input#search-sex-male").is(':checked') ) {
@@ -24,7 +24,7 @@ function captureForm() {
 	searchValues['city']		= jQuery("input#search-city").val();
 	searchValues['sex']			= selectedSex();
 	execute();
-	return true;
+	//return true;
 }
 
 function init() {
@@ -88,8 +88,9 @@ function buildQuery() {
 	if (queryString == "") {
 		queryString = "1=1";
 	}
-
-	return queryString;
+	
+	// Dirty the query with the dates or it fails on every other request
+	return queryString + " and " + new Date().getTime() + "=" + new Date().getTime();
 }
 
 function showResults(results) {
@@ -101,7 +102,8 @@ function showResults(results) {
 	  }
 	}
 	console.debug(results);
-	// jQuery("#info").html(s);
+	$("info").html(s);
+	$("dataPopup").popup('open');
 	// dojo.byId("info").innerHTML = s;
 }
 

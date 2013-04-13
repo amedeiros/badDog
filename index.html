@@ -8,6 +8,11 @@
     <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
     <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/"></script>
     <script src="./js/main.js"></script>
+    <script>
+      dojo.require("esri.tasks.query");
+      dojo.require("esri.map");
+      dojo.ready(init);
+    </script>
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
@@ -50,7 +55,12 @@
 		    		<input type="submit" value="Fetch!" data-inline="true">
 		    	</div>
   			</form>
-  		  <div id="info" style="padding:5px; margin:5px; background-color:#eee;"></div>
+  		  
+        <div data-role="popup" id="dataPopup">
+          <p id="info">This is a completely basic popup, no options set.</p>
+        </div>
+
+
     		<div data-role="footer" data-position="fixed" data-theme="b">
     			<h4>Bad Dog!</h4>
     		</div>
