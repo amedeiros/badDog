@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Bad Dog!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  </head>
+
+  <body>
+
+  	<div data-role="page" id="main" data-theme="b">
+  		<div data-role="header" data-theme="b">
+  			<h1>Bad Dog!</h1>
+  		</div>
+
+  		<div data-role="content">
+
+  			<form action="stubb" method="post">
+  				<div class="ui-grid-a">
+  					<div class="ui-block-a">
+  						<input type="search" name="search" data-inline="true">
+  					</div>
+  					<div class="ui-block-b">
+  						<input type="submit" value="Fetch!" data-inline="true">
+  					</div>
+  				</div>
+
+		    	<fieldset data-role="collapsible" data-theme="b" data-content-theme="d">
+			        <legend>Description</legend>
+			        <label for="search-breed">Breed:</label>
+			        <input type="search" name="search-breed" id="search-breed" placeholder="Search">
+
+			        <label for="search-color">Color:</label>
+			        <input type="search" name="search-color" id="search-color" placeholder="Search">
+
+			        <label for="search-sex">Sex:</label>
+			        <input type="search" name="search-sex" id="search-sex" placeholder="Search">
+		    	</fieldset>
+
+		    	<fieldset data-role="collapsible" data-theme="b" data-content-theme="d">
+			        <legend>Where?</legend>
+			        <label for="search-tag">Street:</label>
+			        <input type="search" name="search-street" id="search-street" placeholder="Search">
+
+			        <label for="search-city">City:</label>
+			        <input type="search" name="search-city" id="search-city" placeholder="Search">
+		    	</fieldset>
+  			</form>
+
+	  		
+
+  		</div>
+
+  		<div data-role="footer" data-position="fixed" data-theme="b">
+  			<h4>Bad Dog!</h4>
+  		</div>
+  	</div>
+  </body>
+  
+</html>
