@@ -53,19 +53,35 @@ function buildQuery() {
 	}
 
 	if (searchValues['color']) {
-		queryString += " Color LIKE '" + searchValues['color'] + "'";
+		if (searchValues['breed']) {
+			queryString += " Or Color LIKE '" + searchValues['color'] + "'";
+		} else {
+			queryString += "Color LIKE '" + searchValues['color'] + "'";
+		}
 	}
 
 	if (searchValues['street']) {
-		queryString += " Street LIKE '" + searchValues['street'] + "'";
+		if (searchValues['color']) {
+			queryString += " Or Street LIKE '" + searchValues['street'] + "'";
+		} else {
+			queryString += "Street LIKE '" + searchValues['street'] + "'";
+		}
 	}
 
 	if (searchValues['city']) {
-		queryString += " City LIKE '" + searchValues['city'] + "'";
+		if (searchValues['street']) {
+			queryString += " Or City LIKE '" + searchValues['city'] + "'";
+		} else {
+			queryString += "City LIKE '" + searchValues['city'] + "'";
+		}
 	}
 
 	if (searchValues['sex']) {
-		queryString += " Sex LIKE '" + searchValues['sex'] + "'";
+		if (searchValues['city']) {
+			queryString += " Or Sex LIKE '" + searchValues['sex'] + "'";
+		} else {
+			queryString += "Sex LIKE '" + searchValues['sex'] + "'";
+		}
 	}
 	alert(queryString);
 	return queryString;
