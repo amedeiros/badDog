@@ -103,7 +103,7 @@ function showResults(results) {
 	  }
 	}
 
-	jQuery("#info").html(formatedResults);
-	jQuery("#dataPopup").popup('open');
+	jQuery("#dog-info").html(formatedResults);
+	$.mobile.changePage("#dog-details");
 }
 

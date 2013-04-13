@@ -48,13 +48,9 @@
 		    	</fieldset>
 		    	
 		    	<div class="center-wrapper">
-		    		<input type="button" value="Fetch!" onclick="captureForm()" data-inline="true">
+		    		<input type="button" value="Fetch!" onclick="captureForm();" data-inline="true">
 		    	</div>
   			</form>
-
-        <div data-transition="slidefade" data-role="popup" id="dataPopup" data-theme="b">
-          <div id="info">hi</div>
-        </div>
 
     		<div data-role="footer" data-position="fixed" data-theme="b">
     			<h4>Bad Dog!</h4>
@@ -64,12 +60,14 @@
     <!-- End Main Page -->
 
     <!-- Begin dog details page -->
-    <div data-role="page" id="dog-details" data-theme="b">
-      <div data-role="header" data-theme="b">
+    <div data-transition="slidefade" data-role="page" id="dog-details" data-theme="b">
+      <div data-role="header" data-theme="b" data-add-back-btn="true">
         <h1>Bad Dog!</h1>
+        <a href="#main" data-role="button" data-icon="arrow-l" data-iconpos="left" data-inline="true">Back</a>
       </div>
 
       <div data-role="content">
+        <div id="dog-info"></div>
       </div>
 
       <div data-role="footer" data-position="fixed" data-theme="b">
