@@ -1,0 +1,7 @@
+.center-wrapper{
+text-align: center;
+padding-top: 15px;
+}
+.center-wrapper * {
+margin: 0 auto;
+}
