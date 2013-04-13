@@ -23,6 +23,7 @@ function captureForm() {
 	searchValues['street']		= jQuery("input#search-street").val();
 	searchValues['city']		= jQuery("input#search-city").val();
 	searchValues['sex']			= selectedSex();
+<<<<<<< HEAD
 	execute();
 	return true;
 }
@@ -86,3 +87,7 @@ function showResults(results) {
 
 
 
+=======
+	return false;
+}
+>>>>>>> 54fa85c982caf33208138e2a0192eed8c58b7065
