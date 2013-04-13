@@ -19,7 +19,7 @@ function selectedSex() {
 
 function captureForm() {
 	searchValues['breed'] 		= jQuery("input#search-breed").val();
-	searchValues['color'] 		= jQuery("input#search-color").val() || null;
+	searchValues['color'] 		= jQuery("input#search-color").val();
 	searchValues['street']		= jQuery("input#search-street").val();
 	searchValues['city']		= jQuery("input#search-city").val();
 	searchValues['sex']			= selectedSex();
@@ -54,7 +54,7 @@ function buildQuery() {
 
 	if (searchValues['color']) {
 		if (searchValues['breed']) {
-			queryString += " Or Color LIKE '" + searchValues['color'] + "'";
+			queryString += " or Color LIKE '" + searchValues['color'] + "'";
 		} else {
 			queryString += "Color LIKE '" + searchValues['color'] + "'";
 		}
@@ -62,7 +62,7 @@ function buildQuery() {
 
 	if (searchValues['street']) {
 		if (searchValues['color']) {
-			queryString += " Or Street LIKE '" + searchValues['street'] + "'";
+			queryString += " or Street LIKE '" + searchValues['street'] + "'";
 		} else {
 			queryString += "Street LIKE '" + searchValues['street'] + "'";
 		}
@@ -70,7 +70,7 @@ function buildQuery() {
 
 	if (searchValues['city']) {
 		if (searchValues['street']) {
-			queryString += " Or City LIKE '" + searchValues['city'] + "'";
+			queryString += " or City LIKE '" + searchValues['city'] + "'";
 		} else {
 			queryString += "City LIKE '" + searchValues['city'] + "'";
 		}
@@ -78,12 +78,17 @@ function buildQuery() {
 
 	if (searchValues['sex']) {
 		if (searchValues['city']) {
-			queryString += " Or Sex LIKE '" + searchValues['sex'] + "'";
+			queryString += " or Sex LIKE '" + searchValues['sex'] + "'";
 		} else {
 			queryString += "Sex LIKE '" + searchValues['sex'] + "'";
 		}
 	}
-	alert(queryString);
+
+	// If no query string built pull everything
+	if (queryString == "") {
+		queryString = "1=1";
+	}
+
 	return queryString;
 }
 
@@ -95,7 +100,7 @@ function showResults(results) {
 	    s = s + "<b>" + att + ":</b>  " + featureAttributes[att] + "<br />";
 	  }
 	}
-	alert(s);
+	console.debug(results);
 	// jQuery("#info").html(s);
 	// dojo.byId("info").innerHTML = s;
 }
