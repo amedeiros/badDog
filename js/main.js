@@ -118,18 +118,20 @@ function showResults1(results) {
 		var baddog = results.features;
 		$.each(baddog, function(index, feature) {
 		console.log(feature);
-			$('#baddogList').append('<li><a href="baddogdetails.html?id=' + feature.attributes.Owner + '">' +
+			$('#baddogList').append('<li><a href="baddogdetails.html?id=' + feature.attributes.Dd_Tag + '">' +
 					
+					'<h3>' + feature.attributes.Owner + '</h3>' +
 					'<h4>' + feature.attributes.Addr + '</h4>' +
+					'<h3>' + feature.attributes.Breed + '</h3>' +
 					'<p>' + feature.attributes.Color + '</p>' +
 					//'<p>' + feature.attributes.Sex + '</p>' +
 					//'<p>' + feature.attributes.City + '</p>' +
 					'<span class="ui-li-count">' + feature.attributes.Comment + '</span></a></li>');
-                                       alert(feature.attributes.Addr);
+                                       
 		});
 		
 		
-		$('#baddogList').listview('refresh');
-		//$.mobile.changePage("#dog-details");
+		//$('#baddogList').listview('refresh');
+		$.mobile.changePage("#dog-details");
 	}
 
