@@ -111,25 +111,25 @@ function showResults(results) {
 }
 //----------------------------------
 
-//Function to parse the JSON message and pass it to #employeeList listview.
+//Function to parse the JSON message and pass it to #baddogList listview.
 function showResults1(results) {
 	
-		$('#employeeList li').remove();
-		var employees = results.features;
-		$.each(employees, function(index, feature) {
+		$('#baddogList li').remove();
+		var baddog = results.features;
+		$.each(baddog, function(index, feature) {
 		console.log(feature);
-			$('#employeeList').append('<li><a href="employeedetails.html?id=' + feature.attributes.Owner + '">' +
+			$('#baddogList').append('<li><a href="baddogdetails.html?id=' + feature.attributes.Owner + '">' +
 					
 					'<h4>' + feature.attributes.Addr + '</h4>' +
 					'<p>' + feature.attributes.Color + '</p>' +
 					//'<p>' + feature.attributes.Sex + '</p>' +
 					//'<p>' + feature.attributes.City + '</p>' +
 					'<span class="ui-li-count">' + feature.attributes.Comment + '</span></a></li>');
-                                       //alert(feature.attributes.Addr);
+                                       alert(feature.attributes.Addr);
 		});
 		
 		
-		$('#employeeList').listview('refresh');
+		$('#baddogList').listview('refresh');
 		//$.mobile.changePage("#dog-details");
 	}
 
