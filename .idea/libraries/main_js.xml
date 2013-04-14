@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="main.js" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery UI" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/main.js" />
+        <item url="file://$PROJECT_DIR$/js/searchdog.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/main.js" />
+      <root url="file://$PROJECT_DIR$/js/searchdog.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

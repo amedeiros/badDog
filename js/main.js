@@ -42,7 +42,7 @@ function execute() {
 	query.text = searchValues['color'];
 	query.where = buildQuery();
 	//execute query
-	queryTask.execute(query, showResults);
+	queryTask.execute(query,showResults1);
 }
 
 function buildQuery() {
@@ -98,12 +98,38 @@ function showResults(results) {
 	var formatedResults = "";
 	for (var i=0, il=results.features.length; i<il; i++) {
 	  var featureAttributes = results.features[i].attributes;
-	  for (att in featureAttributes) {
-	    formatedResults += "<b>" + att + ":</b>  " + featureAttributes[att] + "<br />";
+	  	  for (att in featureAttributes) {
+	       
+	       formatedResults += "<b>" + att + ":</b>  " + featureAttributes[att] ;
+	       }
+	     
 	  }
-	}
+	
 
 	jQuery("#dog-info").html(formatedResults);
 	$.mobile.changePage("#dog-details");
 }
+//----------------------------------
+
+//Function to parse the JSON message and pass it to #employeeList listview.
+function showResults1(results) {
+	
+		$('#employeeList li').remove();
+		var employees = results.features;
+		$.each(employees, function(index, feature) {
+		console.log(feature);
+			$('#employeeList').append('<li><a href="employeedetails.html?id=' + feature.attributes.Owner + '">' +
+					
+					'<h4>' + feature.attributes.Addr + '</h4>' +
+					'<p>' + feature.attributes.Color + '</p>' +
+					//'<p>' + feature.attributes.Sex + '</p>' +
+					//'<p>' + feature.attributes.City + '</p>' +
+					'<span class="ui-li-count">' + feature.attributes.Comment + '</span></a></li>');
+                                       //alert(feature.attributes.Addr);
+		});
+		
+		
+		$('#employeeList').listview('refresh');
+		//$.mobile.changePage("#dog-details");
+	}
 
