@@ -120,15 +120,17 @@ function showResults1(results) {
 		console.log(feature);
 			$('#baddogList').append('<li><a href="baddogdetails.html?id=' + feature.attributes.Dd_Tag + '">' +
 					
-					'<h3>' + feature.attributes.Owner + '</h3>' +
-					'<h4>' + feature.attributes.Addr + '</h4>' +
-					'<h3>' + feature.attributes.Breed + '</h3>' +
-					'<p>' + feature.attributes.Color + '</p>' +
+					'<h3>' + "Owner:" + feature.attributes.Owner + '</h3>' +
+					'<h4>' + "Address:" + feature.attributes.Addr + "," + feature.attributes.City + '</h4>' +
+					'<h4>' + "Breed:" + feature.attributes.Breed + '</h4>' +
+					'<h4>' + "Victims:" + feature.attributes.Victim_Inf + '</h4>' +
+					'<p>' + "Color:" + feature.attributes.Color + '</p>' +
+					
 					//'<p>' + feature.attributes.Sex + '</p>' +
 					//'<p>' + feature.attributes.City + '</p>' +
 					'<span class="ui-li-count">' + feature.attributes.Comment + '</span></a></li>');
                                        
-		});
+		});   Victim_Inf:
 		
 		
 		//$('#baddogList').listview('refresh');
